@@ -14,6 +14,9 @@ export default class Fans {
         await this.power.write(1);
     }
 
+    /**
+     * Turn on power to the fan.
+     */
     async on() {
         await this.power.write(0)
     }
