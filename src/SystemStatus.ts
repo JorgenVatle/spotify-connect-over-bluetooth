@@ -1,4 +1,4 @@
-import SystemInformation from 'systeminformation'
+import SystemInformation, {Systeminformation} from 'systeminformation'
 import { EventEmitter } from "events";
 
 export default new class SystemStatus extends EventEmitter {
@@ -24,4 +24,8 @@ export default new class SystemStatus extends EventEmitter {
     protected start() {
         setInterval(() => this.poll(), 1000);
     }
+}
+
+declare interface SystemStatus {
+    on(event: 'cpu', listener: (data: Systeminformation.CpuData) => void): this;
 }
