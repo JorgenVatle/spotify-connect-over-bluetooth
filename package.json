@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/JorgenVatle/spotify-connect-over-bluetooth/issues"
   },
-  "homepage": "https://github.com/JorgenVatle/spotify-connect-over-bluetooth#readme"
+  "homepage": "https://github.com/JorgenVatle/spotify-connect-over-bluetooth#readme",
+  "devDependencies": {
+    "typescript": "^3.7.4"
+  }
 }
