@@ -22,9 +22,11 @@
   },
   "homepage": "https://github.com/JorgenVatle/spotify-connect-over-bluetooth#readme",
   "devDependencies": {
+    "@types/systeminformation": "^3.54.1",
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "onoff": "^5.0.1"
+    "onoff": "^5.0.1",
+    "systeminformation": "^4.16.1"
   }
 }
