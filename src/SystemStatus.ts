@@ -1,7 +1,15 @@
 import SystemInformation from 'systeminformation'
 import { EventEmitter } from "events";
 
-export default class SystemStatus extends EventEmitter {
+export default new class SystemStatus extends EventEmitter {
+
+    /**
+     * System Status constructor.
+     */
+    constructor() {
+        super();
+        this.start();
+    }
 
     /**
      * Fetch and emit current system information.
@@ -13,7 +21,7 @@ export default class SystemStatus extends EventEmitter {
     /**
      * Start polling for system information.
      */
-    start() {
+    protected start() {
         setInterval(() => this.poll(), 1000);
     }
 }
