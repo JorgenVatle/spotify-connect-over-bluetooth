@@ -11,14 +11,14 @@ export default class Fans {
      * Disable power to fan.
      */
     async off() {
-        await this.power.write(1);
+        await this.power.write(0);
     }
 
     /**
      * Turn on power to the fan.
      */
     async on() {
-        await this.power.write(0)
+        await this.power.write(1)
     }
 
 }
