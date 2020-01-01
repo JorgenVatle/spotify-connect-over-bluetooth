@@ -1,1 +1,1 @@
-import FanController from "./FanController";
+require('./FanController');
