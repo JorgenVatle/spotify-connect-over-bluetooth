@@ -20,6 +20,7 @@ export default new class FanController {
      */
     protected start() {
         SystemStatus.on('cpu.temperature', (data) => {
+            console.log(JSON.stringify(data, null, 2));
             this.handleTemperature(data.max);
         })
     }
