@@ -16,6 +16,7 @@ class SystemStatus extends EventEmitter {
      */
     protected async poll() {
         this.emit('cpu', await SystemInformation.cpu());
+        this.emit('cpu.temperature', await SystemInformation.cpuTemperature());
     }
 
     /**
@@ -28,6 +29,7 @@ class SystemStatus extends EventEmitter {
 
 declare interface SystemStatus {
     on(event: 'cpu', listener: (data: Systeminformation.CpuData) => void): this;
+    on(event: 'cpu.temperature', listener: (data: Systeminformation.CpuTemperatureData) => void): this;
 }
 
 export default new SystemStatus();
