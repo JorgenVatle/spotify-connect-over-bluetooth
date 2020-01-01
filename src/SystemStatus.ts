@@ -1,7 +1,7 @@
 import SystemInformation, {Systeminformation} from 'systeminformation'
 import { EventEmitter } from "events";
 
-export default new class SystemStatus extends EventEmitter {
+class SystemStatus extends EventEmitter {
 
     /**
      * System Status constructor.
@@ -29,3 +29,5 @@ export default new class SystemStatus extends EventEmitter {
 declare interface SystemStatus {
     on(event: 'cpu', listener: (data: Systeminformation.CpuData) => void): this;
 }
+
+export default new SystemStatus();
