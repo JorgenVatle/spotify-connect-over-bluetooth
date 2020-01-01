@@ -1,6 +1,6 @@
 import {Gpio} from "onoff";
 
-export default class Fans {
+export default new class Fans {
 
     /**
      * Fan power output.
