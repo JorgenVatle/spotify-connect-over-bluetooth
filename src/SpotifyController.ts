@@ -13,7 +13,9 @@ export default new class SpotifyController {
 
     protected start() {
         this.logStream.stdout.setEncoding('utf8');
-        this.logStream.on('data', (text) => this.handleLog(text));
+        this.logStream.stderr.setEncoding('utf8');
+        this.logStream.stdout.on('data', (text) => this.handleLog(text));
+        this.logStream.stderr.on('data', (text) => this.handleLog(text));
         this.logStream.on('close', (code) => this.handleClose(code));
     }
 
