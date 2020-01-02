@@ -5,7 +5,7 @@ export default new class SpotifyController {
     /**
      * Librespot Journald logs.
      */
-    protected readonly logStream = spawn('journalctl -t librespot -f');
+    protected readonly logStream = spawn('journalctl', ['-t librespot', '-f']);
 
     constructor() {
         this.start();
