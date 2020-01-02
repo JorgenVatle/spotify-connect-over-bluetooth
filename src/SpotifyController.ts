@@ -17,6 +17,7 @@ export default new class SpotifyController {
     }
 
     protected handleLog(line: string) {
+        console.log('Got librespot line: %s', line);
         if (line.match(/ConnectionReset/)) {
             spawn('sudo systemctl restart raspotify');
         }
