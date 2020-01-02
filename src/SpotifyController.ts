@@ -14,6 +14,7 @@ export default new class SpotifyController {
     protected start() {
         this.logStream.stdout.setEncoding('utf8');
         this.logStream.stdout.on('data', (text) => this.handleLog(text));
+        this.logStream.on('close', (code) => this.handleClose(code));
     }
 
     protected handleLog(line: string) {
@@ -21,6 +22,10 @@ export default new class SpotifyController {
         if (line.match(/ConnectionReset/)) {
             spawn('sudo systemctl restart raspotify');
         }
+    }
+
+    protected handleClose(code: number) {
+        console.log('Librespot logs closed with code: %s', code);
     }
 
 }
