@@ -1,5 +1,5 @@
 ## Todo
-- [ ] Project depends on Raspotify which uses Librespot for fetching and playing tracks. Sometimes when connection 
+- [x] Project depends on Raspotify which uses Librespot for fetching and playing tracks. Sometimes when connection 
 issues are encountered, Librespot will hang. (See example below). Possible temporary fix for this issue would be to
 tail the log output of librespot and forcefully restart it when we detect a connection reset message.
 ```
