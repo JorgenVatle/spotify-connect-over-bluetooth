@@ -21,7 +21,7 @@ export default new class SpotifyController {
 
     protected handleLog(line: string) {
         console.log(line);
-        if (line.match(/ConnectionReset/)) {
+        if (line.match(/ConnectionReset|panicked at/)) {
             console.log('Restarting Raspotify...');
             spawn('sudo', ['systemctl', 'restart', 'raspotify']);
         }
