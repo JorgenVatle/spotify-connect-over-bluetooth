@@ -1,1 +1,2 @@
 require('./FanController');
+require('./SpotifyController');
