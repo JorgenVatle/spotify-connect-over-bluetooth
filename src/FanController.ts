@@ -6,7 +6,12 @@ export default new class FanController {
     /**
      * Start the fans once temperature hits the given value in celsius.
      */
-    protected readonly permittedTemperature = 55;
+    protected readonly startAt = 60;
+
+    /**
+     * Stop the fans once temperature hits the given celsius value.
+     */
+    protected readonly stopAt = 38;
 
     /**
      * Fan Controller constructor.
@@ -29,11 +34,12 @@ export default new class FanController {
      * Handle current system temperatures.
      */
     async handleTemperature(temp: number) {
-        if (temp >= this.permittedTemperature) {
+        if (temp >= this.startAt) {
             await Fans.on();
-            return;
         }
 
-        await Fans.off();
+        if (temp <= this.stopAt) {
+            await Fans.off();
+        }
     }
 }
